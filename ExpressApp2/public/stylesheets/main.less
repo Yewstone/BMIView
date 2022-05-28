@@ -1,0 +1,94 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import (inline) "Bootstrap.css";
+
+@primary: #007FC8;
+
+h1 {
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+h2 {
+    color: #555;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+
+.bmiGrafic {
+    text-align: center;
+    color: @primary;
+
+    .descriptionTxt {
+        @media (max-width: 769px) {
+            font-size: 1rem !important;
+        }
+    }
+
+    .bmiNumber {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .progress {
+        -moz-border-radius: .75rem;
+        -webkit-border-radius: .75rem;
+        border-radius: .75rem;
+        height: 1.5rem;
+        background-color: #c4c4c4;
+        position: relative;
+
+        @media (max-width: 769px) {
+            height: 1.25rem;
+        }
+    }
+
+    .getMobile {
+        display: none;
+    }
+
+    .arrow {
+        width: 0;
+        height: 0;
+        border-left: 1.5rem solid transparent;
+        border-right: 1.5rem solid transparent;
+        border-top: 2.25rem solid @primary;
+
+        @media (max-width: 769px) {
+            border-left: 1rem solid transparent;
+            border-right: 1rem solid transparent;
+            border-top: 1.6rem solid @primary;
+            display: none;
+
+            &.getMobile {
+                display: block;
+            }
+        }
+    }
+
+    .progress-bar {
+        width: calc(33.33% - 3px);
+
+        &.bg-success {
+            background-color: #52ccce !important;
+            border: #FFF solid 2px;
+            border-top: 0;
+            border-bottom: 0;
+            width: calc(33.33% + 6px);
+        }
+
+        &.bg-hidden {
+            background-color: transparent !important;
+        }
+    }
+}
+
+
+@media (max-width: 392px) {
+    .row {
+        margin-right: -1.5rem;
+        margin-left: -1.5rem;
+    }
+}

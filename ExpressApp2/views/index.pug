@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    
+    - var prozent = 0
+
+    if bminb < 30
+        -var prozent = bminb * 33.3333 / 30
+    else if bminb > 90
+        -var prozent = (bminb - 90) * 33.3333 / 30 + 66.666667
+    else
+        -var prozent = (bminb - 30) * 33.3333 / 60 + 33.333333
+
+    div.container
+        section#content
+            h1.text-center Welcome to your pet's #{title} Count
+
+            div#petBmi.col-xs-12.col-sm-12.col-md-10.col-lg-8.col-xl-6.mx-auto
+                h2.text-center.fs-4 #{petname}'s BMI is
+                div.bmiGrafic
+                    div.bmiNumber.mb-1 #{bminb}
+                    div.arrow(style="margin-left: clamp(0px, calc(" + prozent + "% - 1.5rem), calc(100% - 2.5rem));")
+                    div.arrow.getMobile(style="margin-left: clamp(0px, calc(" + prozent + "% - 1rem), calc(100% - 1.75rem));")
+                    div.progress.mb-1
+                        if  bminb < 30
+                            div.progress-bar.bg-danger(role="progressbar" aria-valuemin="0" aria-valuemax="120" aria-valuenow=bminb)
+                            div.progress-bar.bg-success.bg-hidden(role="progressbar" aria-valuemin="0" aria-valuemax="120" aria-valuenow=bminb)
+                            div.progress-bar.bg-danger.bg-hidden(role="progressbar" aria-valuemin="0" aria-valuemax="120" aria-valuenow=bminb)
+                        else if bminb > 90
+                            div.progress-bar.bg-danger.bg-hidden(role="progressbar" aria-valuemin="0" aria-valuemax="120" aria-valuenow=bminb)
+                            div.progress-bar.bg-success.bg-hidden(role="progressbar" aria-valuemin="0" aria-valuemax="120" aria-valuenow=bminb)
+                            div.progress-bar.bg-danger(role="progressbar" aria-valuemin="0" aria-valuemax="120" aria-valuenow=bminb)
+                        else
+                            div.progress-bar.bg-danger.bg-hidden(role="progressbar" aria-valuemin="0" aria-valuemax="120" aria-valuenow=bminb)
+                            div.progress-bar.bg-success(role="progressbar" aria-valuemin="0" aria-valuemax="120" aria-valuenow=bminb)
+                            div.progress-bar.bg-danger.bg-hidden(role="progressbar" aria-valuemin="0" aria-valuemax="120" aria-valuenow=bminb)
+
+                    div.container
+                        div.row.descriptionTxt.fs-5
+                            div.col-4 Underweight
+                            div.col-4 Normal
+                            div.col-4 Overweight
+                
