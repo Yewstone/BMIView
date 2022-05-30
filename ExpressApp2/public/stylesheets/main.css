@@ -11276,6 +11276,9 @@ body {
 .bmiGrafic .progress-bar {
   width: calc(33.33% - 3px);
 }
+.bmiGrafic .progress-bar.bg-danger {
+  background-color: #d63361 !important;
+}
 .bmiGrafic .progress-bar.bg-success {
   background-color: #52ccce !important;
   border: #FFF solid 2px;
@@ -11287,8 +11290,8 @@ body {
   background-color: transparent !important;
 }
 @media (max-width: 392px) {
-  .row {
-    margin-right: -1.5rem;
-    margin-left: -1.5rem;
+  .bmiGrafic .row {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
   }
 }
