@@ -38,6 +38,7 @@
       <SubType>Content</SubType>
       <DependentUpon>compilerconfig.json</DependentUpon>
     </Content>
+    <Content Include="public\stylesheets\main.css" />
     <Content Include="public\stylesheets\main.min.css" />
     <Content Include="libman.json" />
     <Content Include="public\stylesheets\main.less">
@@ -48,7 +49,6 @@
     </Content>
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
-    <Content Include="public\stylesheets\main.css" />
     <Content Include="README.md" />
     <Content Include="views\index.pug" />
     <Content Include="views\layout.pug" />
